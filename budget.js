@@ -111,15 +111,46 @@ function showTotals(){
 function showExpenses(){
     let search=document.getElementById("searchExpense").value.trim().toLowerCase();
     let filter=document.getElementById("filterCategory").value;
+    let sortBy=document.getElementById("sort-by").value;
+    let sortedExpense=[];
     // Clear old rows before displaying the matching transactions.
     document.getElementById("historyExpense").textContent="";
     let count=0;
     for(let i=0;i<expenses.length;i++){
-        if((filter=="" || category[i]==filter) && expenses[i].toLowerCase().includes(search)){
-            createElement(expenses[i],amount[i],category[i]);
-            count++;
+            let max=-1;
+            for(let j=0;j<expenses.length;j++){
+                if((max==-1 || amount[j]>amount[max]) && sortedExpense.includes(j)==false){
+                    max=j;
+                }
+                
+            }
+            sortedExpense.push(max);
+    }
+    if(sortBy=="desc"){
+        for(let i=0;i<expenses.length;i++){
+            if((filter=="" || category[sortedExpense[i]]==filter) && expenses[sortedExpense[i]].toLowerCase().includes(search)){
+                createElement(expenses[sortedExpense[i]],amount[sortedExpense[i]],category[sortedExpense[i]]);
+                count++;
+            }
         }
     }
+    else if(sortBy=="asc"){
+        for(let i=expenses.length-1;i>=0;i--){
+            if((filter=="" || category[sortedExpense[i]]==filter) && expenses[sortedExpense[i]].toLowerCase().includes(search)){
+                createElement(expenses[sortedExpense[i]],amount[sortedExpense[i]],category[sortedExpense[i]]);
+                count++;
+            }
+        }
+    }
+    else{
+        for(let i=0;i<expenses.length;i++){
+            if((filter=="" || category[i]==filter) && expenses[i].toLowerCase().includes(search)){
+                createElement(expenses[i],amount[i],category[i]);
+                count++;
+            }
+        }
+    }
+    
     if(count==0){
         document.getElementById("historyExpense").textContent="No transactions found.";
     }

@@ -77,7 +77,6 @@ select{
     right: 50px;  
     cursor: pointer;   
 }
-
 .arrow i{
     position: absolute;
     right: 30px;
@@ -109,6 +108,11 @@ select{
     margin-bottom: 20px;
     margin-left: -20px;
 }
+#searchExpense{
+    margin-top: 0px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
 .expense{
     font-size: 20px;
     margin-bottom: 10px;
@@ -120,6 +124,52 @@ select{
 #historySection{
     display: none;
     font-family: sans-serif;
+}
+.filter{
+    position: relative;
+}
+#filterCategory{
+    height: 42px;
+    border: 1.5px solid rgba(8, 8, 56, 0.931) ; 
+    border-radius: 5px;
+}
+.filter i{
+    position:absolute;
+    top: 50%;
+    left: 86%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+#filter-sort{
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin-bottom: 25px;
+    margin-top: -27px;
+}
+
+.sort{
+    position: relative;
+
+}
+.sort i{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+#sort-by{
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    color: transparent;
+    border: 1.5px solid rgba(8, 8, 56, 0.931) ; 
+    border-radius: 5px;
+}
+#sort-by option{
+    color: black;
 }
 #categoryTotals{
     margin-top: 30px;
