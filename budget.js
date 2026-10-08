@@ -168,3 +168,15 @@ function viewHistory(){
     document.getElementById("filterCategory").value="";
     showExpenses();
 }
+function toggleColorMode(){
+    document.body.classList.toggle("darkMode");
+
+    if(document.body.classList.contains("darkMode")){
+        document.getElementById("colorMode").innerHTML=
+            '<i class="fa-solid fa-toggle-on"></i>';
+    }
+    else{
+        document.getElementById("colorMode").innerHTML=
+            '<i class="fa-solid fa-toggle-off"></i>';
+    }
+}

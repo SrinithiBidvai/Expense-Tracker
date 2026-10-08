@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="budget.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"/>
     <title>Expenses Tracker</title>
 </head>
 <body>
+    <div id="colorMode" onclick="toggleColorMode()"><i class="fa-solid fa-toggle-off"></i></div>
     <div class="content">
         <div id="enterDetails">
             <button onclick="viewHistory()" id="history">View History</button>
@@ -49,7 +49,7 @@
             </div>
         </div>
         <div id="historySection">
-             <div id="goBack">
+            <div id="goBack">
                 <button onclick="goBack()"><i class="fa-solid fa-arrow-left"></i> </button>
             </div>
             <h1>Expense History</h1>
@@ -74,7 +74,7 @@
                         <option value="asc">Amount spent (low to high)</option>
                         <option value="desc">Amount spent (high to low)</option>
                     </select>
-                    <i class="fa-solid fa-arrow-up-wide-short" aria-hidden="true"></i>
+                    <i class="fa-solid fa-arrow-up-wide-short"></i>
                 </div>
             </div>
             <div id="historyExpense"></div>
